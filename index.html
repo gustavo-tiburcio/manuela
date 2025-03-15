@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuela</title>
+    <style>
+        html, body{
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            min-height: 80vh;
+            max-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            font-size: 32px;
+
+            background-color: #f3f3f3;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .error {
+            visibility: hidden;
+            color: #f3f3f3;
+            font-size: 16px;
+            padding: 16px 48px;
+            border-radius: 12px;
+            background-color: #d64f4f;
+            font-weight: bold;
+        }
+
+        button{
+            padding: 12px 48px;
+            border: none;
+            font-size: 16px;
+            border-radius: 32px;
+            cursor: pointer;
+            color: #f3f3f3;
+        }
+
+        .text {
+            margin-top: 48px;
+            margin-bottom: 16px;
+        }
+
+        .no {
+            background-color: #d64f4f;
+        }
+
+        .yes {
+            background-color: #43d343;
+        }
+
+        .last-text{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="error">
+            <div class="msg-error">afi, nao gostei, vou terminar!</div>
+        </div>
+        <div class="buttons">
+            <div class="text">voce realmente gosta de <strong>MIM</strong>?</div>
+            <div>
+                <button class="yes">yes</button>
+                <button class="no">nao</button>
+            </div>
+            <div class="last-text">
+                aahhhhh voce é mto fofa. <br>
+                gosto muito de vc, voce é a primeira mulher que eu vivo algo <br>
+                parecido, quero passar mais tempo de vc e te amar mto <br>
+                quero
+            </div>
+        </div>
+    </main>
+    <script>
+        const yesButton = document.querySelector(".yes");
+        const noButton = document.querySelector(".no");
+        const errorDiv = document.querySelector(".error");
+        const text = document.querySelector("last-text");
+
+        noButton.addEventListener("click", () => {
+            errorDiv.style.visibility = "visible";
+            noButton.style.display = "none";
+        });
+
+        yesButton.addEventListener("click", () => {
+            errorDiv.style.visibility = "hidden";
+            text.style.visibility = "visible";
+        });
+    </script>
+</body>
+</html>
